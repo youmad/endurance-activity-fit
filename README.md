@@ -18,16 +18,7 @@ coordinates one-pass imports.
 - contextual exceptions containing message sequence and byte offset;
 - an optimized Record path with the same domain output as the reference path.
 
-## Requirements
-
-- PHP 8.5;
-- `youmad/endurance-foundation`;
-- `youmad/endurance-activity`;
-- `youmad/endurance-fit` `^0.1.1` (installed from Packagist).
-
 ## Installation
-
-Install the package with Composer:
 
 ```bash
 composer require youmad/endurance-activity-fit
