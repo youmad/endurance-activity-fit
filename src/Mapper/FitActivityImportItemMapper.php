@@ -296,7 +296,8 @@ final readonly class FitActivityImportItemMapper
 
                 if ($item instanceof ActivityLifecycleItem) {
                     if (
-                        ActivityLifecycleAction::Start === $item->action
+                        (ActivityLifecycleAction::Start === $item->action
+                        || ActivityLifecycleAction::TimerStart === $item->action)
                         && null === $explicitTimerStartAt
                     ) {
                         $explicitTimerStartAt = $item->occurredAt;
@@ -328,7 +329,8 @@ final readonly class FitActivityImportItemMapper
                     }
 
                     if (
-                        ActivityLifecycleAction::Start === $item->action
+                        (ActivityLifecycleAction::Start === $item->action
+                        || ActivityLifecycleAction::TimerStart === $item->action)
                         || ActivityLifecycleAction::Resume === $item->action
                     ) {
                         $terminalFinish = null;

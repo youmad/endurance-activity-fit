@@ -290,6 +290,69 @@ final class ImportFitActivityTest extends TestCase
         self::assertSame($reportedWarnings, $result->report->warnings);
     }
 
+    public function testPreparedImportKeepsMeasurementsInsideSessionBeforeTimerStart(): void
+    {
+        $sessionStart = new \DateTimeImmutable('2026-01-15T10:30:00Z');
+        $timerStart = $sessionStart->modify('+3 seconds');
+        $activity = Activity::start(Instant::fromDateTimeImmutable($sessionStart));
+        $activities = $this->createMock(ActivityRepository::class);
+        $activities->expects(self::once())->method('get')->willReturn($activity);
+        $activities->expects(self::once())->method('save')->with($activity);
+        $observed = [];
+        $observations = $this->createMock(StagedActivityObservationWriter::class);
+        $observations->expects(self::exactly(2))->method('append')->willReturnCallback(
+            static function (
+                ActivityImportGenerationId $generationId,
+                ActivityId $activityId,
+                ActivityObservation $observation,
+            ) use (&$observed): void {
+                $observed[] = $observation;
+            },
+        );
+        $generationId = ActivityImportGenerationId::generate();
+        $generations = $this->generationRepository($generationId, false);
+        $generations->expects(self::once())->method('activate')->with($generationId);
+        $generations->expects(self::never())->method('fail');
+        $prepared = null;
+        $bytes = $this->fitFileWithPreStartObservation(
+            preStartAt: $sessionStart,
+            startedAt: $timerStart,
+            sessionStartedAt: $sessionStart,
+        );
+        $result = $this->fitImporter($activities, $observations, $generations)->import(
+            activityId: $activity->id,
+            idempotencyKey: ActivityImportIdempotencyKey::fromString('fit:delayed-timer-start'),
+            input: $this->input($bytes),
+            onPrepared: static function (Instant $resolved) use (&$prepared): void {
+                $prepared = $resolved;
+            },
+        );
+
+        self::assertTrue($result->isImported());
+        self::assertTrue($prepared?->equals($activity->startedAt));
+        self::assertTrue($activity->timerStartedAt?->equals(Instant::fromDateTimeImmutable($timerStart)));
+        self::assertCount(2, $observed);
+        self::assertTrue($observed[0]->timestamp->equals($activity->startedAt));
+        self::assertTrue($observed[1]->timestamp->equals($activity->timerStartedAt));
+        $heartRates = [];
+        foreach ($observed as $observation) {
+            foreach ($observation->readings() as $reading) {
+                $measurement = $reading->measurement;
+                if ($measurement instanceof ScalarMeasurement) {
+                    $heartRates[] = $measurement->value;
+                }
+            }
+        }
+        self::assertSame([53, 52], $heartRates);
+        self::assertSame(3_000_000, $activity->elapsedDuration()?->toMicroseconds());
+        self::assertSame(0, $activity->timerDuration()?->toMicroseconds());
+        self::assertNotNull($result->report);
+        self::assertNotContains(
+            ActivityImportWarningCode::PreStartObservationsSkipped,
+            array_map(static fn ($warning): ActivityImportWarningCode => $warning->code, $result->report->warnings),
+        );
+    }
+
     public function testCompletedDuplicateDecodesFitOnlyOnce(): void
     {
         $activityId = ActivityId::generate();
@@ -675,6 +738,7 @@ final class ImportFitActivityTest extends TestCase
     private function fitFileWithPreStartObservation(
         \DateTimeImmutable $preStartAt,
         \DateTimeImmutable $startedAt,
+        ?\DateTimeImmutable $sessionStartedAt = null,
     ): string {
         $recordDefinition = "\x40"
             ."\x00"
@@ -703,9 +767,11 @@ final class ImportFitActivityTest extends TestCase
             ."\x01".pack('V', $startTimestamp)."\x00\x00\x00"
             ."\x00".pack('V', $startTimestamp).chr(52)
             .$this->summaryMessages(
-                startedAt: $startedAt,
+                startedAt: $sessionStartedAt ?? $startedAt,
                 reportedAt: $startedAt,
-                elapsedMilliseconds: 0,
+                elapsedMilliseconds: null === $sessionStartedAt
+                    ? 0
+                    : ($startedAt->getTimestamp() - $sessionStartedAt->getTimestamp()) * 1_000,
                 timerMilliseconds: 0,
                 firstLocalMessageNumber: 2,
             );

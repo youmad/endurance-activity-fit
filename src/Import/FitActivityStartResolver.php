@@ -21,13 +21,28 @@ final class FitActivityStartResolver
 
     private ?Instant $earliest = null;
 
+    private ?Instant $earliestSessionStart = null;
+
     public function observe(ActivityImportItem $item): void
     {
         if (
             $item instanceof ActivityLifecycleItem
-            && ActivityLifecycleAction::Start === $item->action
+            && (
+                ActivityLifecycleAction::Start === $item->action
+                || ActivityLifecycleAction::TimerStart === $item->action
+            )
         ) {
             $this->explicitStart = $item->occurredAt;
+        }
+
+        if (
+            $item instanceof SessionItem
+            && (
+                null === $this->earliestSessionStart
+                || $item->session->startedAt->isBefore($this->earliestSessionStart)
+            )
+        ) {
+            $this->earliestSessionStart = $item->session->startedAt;
         }
 
         $candidate = self::candidate($item);
@@ -45,9 +60,20 @@ final class FitActivityStartResolver
 
     public function resolve(): Instant
     {
-        return $this->explicitStart
+        $start = $this->explicitStart
             ?? $this->earliest
             ?? throw FitActivityStartNotFound::inFile();
+
+        // Session intervals may include time before the first timer event.
+        // Do not use an arbitrary early Record or Lap to widen this interval.
+        if (
+            null !== $this->earliestSessionStart
+            && $this->earliestSessionStart->isBefore($start)
+        ) {
+            return $this->earliestSessionStart;
+        }
+
+        return $start;
     }
 
     private static function candidate(

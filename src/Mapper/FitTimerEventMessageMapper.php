@@ -73,7 +73,7 @@ final readonly class FitTimerEventMessageMapper implements ResettableFitMessageM
         return match (
             $this->eventType($eventType)
         ) {
-            ActivityLifecycleAction::Start => $this->start(
+            ActivityLifecycleAction::TimerStart => $this->start(
                 message: $message,
                 occurredAt: $occurredAt,
             ),
@@ -86,7 +86,7 @@ final readonly class FitTimerEventMessageMapper implements ResettableFitMessageM
                 occurredAt: $occurredAt,
             ),
             null => [],
-            ActivityLifecycleAction::Resume => throw new \LogicException('Resume is resolved from timer state, not directly from a FIT event type.'),
+            ActivityLifecycleAction::Start, ActivityLifecycleAction::Resume => throw new \LogicException('Resume is resolved from timer state, not directly from a FIT event type.'),
         };
     }
 
@@ -124,7 +124,7 @@ final readonly class FitTimerEventMessageMapper implements ResettableFitMessageM
         return match (
             $eventType->symbolicName()
         ) {
-            'start' => ActivityLifecycleAction::Start,
+            'start' => ActivityLifecycleAction::TimerStart,
             'stop_all' => ActivityLifecycleAction::Finish,
             null => $this->numericEventType(
                 $eventType->value,
@@ -141,7 +141,7 @@ final readonly class FitTimerEventMessageMapper implements ResettableFitMessageM
         }
 
         return match ($value) {
-            self::EVENT_TYPE_START => ActivityLifecycleAction::Start,
+            self::EVENT_TYPE_START => ActivityLifecycleAction::TimerStart,
             self::EVENT_TYPE_STOP_ALL => ActivityLifecycleAction::Finish,
             default => null,
         };
@@ -159,7 +159,7 @@ final readonly class FitTimerEventMessageMapper implements ResettableFitMessageM
                 message: $message,
                 occurredAt: $occurredAt,
                 nextState: FitTimerState::Running,
-                action: ActivityLifecycleAction::Start,
+                action: ActivityLifecycleAction::TimerStart,
             ),
             FitTimerState::Paused => $this->transition(
                 message: $message,

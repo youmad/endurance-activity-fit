@@ -64,7 +64,7 @@ final class FitTimerEventMessageMapperTest extends TestCase
 
         self::assertSame(
             [
-                ActivityLifecycleAction::Start,
+                ActivityLifecycleAction::TimerStart,
                 ActivityLifecycleAction::Pause,
                 ActivityLifecycleAction::Resume,
                 ActivityLifecycleAction::Pause,
@@ -120,7 +120,7 @@ final class FitTimerEventMessageMapperTest extends TestCase
             );
 
             self::assertSame(
-                ActivityLifecycleAction::Start,
+                ActivityLifecycleAction::TimerStart,
                 $this->lifecycleItems($mapper->map(
                     $this->message(
                         timestamp: '2026-01-15T10:46:00Z',
@@ -248,7 +248,7 @@ final class FitTimerEventMessageMapperTest extends TestCase
 
         self::assertSame(
             [
-                ActivityLifecycleAction::Start,
+                ActivityLifecycleAction::TimerStart,
                 ActivityLifecycleAction::Pause,
                 ActivityLifecycleAction::Resume,
             ],
@@ -281,7 +281,7 @@ final class FitTimerEventMessageMapperTest extends TestCase
 
         self::assertSame(
             [
-                ActivityLifecycleAction::Start,
+                ActivityLifecycleAction::TimerStart,
                 ActivityLifecycleAction::Pause,
                 ActivityLifecycleAction::Finish,
             ],
@@ -352,7 +352,7 @@ final class FitTimerEventMessageMapperTest extends TestCase
         $mapper->reset();
 
         self::assertSame(
-            ActivityLifecycleAction::Start,
+            ActivityLifecycleAction::TimerStart,
             $this->lifecycleItems($mapper->map(
                 $this->message(
                     timestamp: '2026-01-16T10:30:00Z',
@@ -384,7 +384,7 @@ final class FitTimerEventMessageMapperTest extends TestCase
 
         self::assertSame(
             [
-                ActivityLifecycleAction::Start,
+                ActivityLifecycleAction::TimerStart,
                 ActivityLifecycleAction::Pause,
                 ActivityLifecycleAction::Finish,
             ],
@@ -409,7 +409,7 @@ final class FitTimerEventMessageMapperTest extends TestCase
         );
 
         self::assertSame(
-            ActivityLifecycleAction::Start,
+            ActivityLifecycleAction::TimerStart,
             $this->lifecycleItems($second)[0]->action,
         );
     }

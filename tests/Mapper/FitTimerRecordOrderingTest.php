@@ -71,6 +71,7 @@ final class FitTimerRecordOrderingTest extends TestCase
             } elseif ($item instanceof ActivityLifecycleItem) {
                 match ($item->action) {
                     ActivityLifecycleAction::Start => $activity->confirmStartedAt($item->occurredAt),
+                    ActivityLifecycleAction::TimerStart => $activity->confirmTimerStartedAt($item->occurredAt),
                     ActivityLifecycleAction::Pause => $activity->pause($item->occurredAt),
                     ActivityLifecycleAction::Resume => $activity->resume($item->occurredAt),
                     ActivityLifecycleAction::Finish => $activity->finish($item->occurredAt),
@@ -81,7 +82,7 @@ final class FitTimerRecordOrderingTest extends TestCase
         }
 
         self::assertSame([
-            ['start', '00.000000'],
+            ['timer_start', '00.000000'],
             ['record', '00.000000'],
             ['pause', '02.000000'],
             ['record', '02.000000'],
