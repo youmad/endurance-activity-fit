@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Fixture;
+namespace Endurance\ActivityFit\Tests\Fixture;
 
-use Youmad\Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
+use Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
 
 /** Selects locally generated Profile data for FIT integration fixtures. */
 final class TestFitProfile

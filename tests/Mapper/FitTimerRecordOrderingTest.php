@@ -2,30 +2,30 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityLifecycleAction;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Entity\Activity;
+use Endurance\Activity\Exception\CannotRecordObservation;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
+use Endurance\ActivityFit\Mapper\FitRecordImportProjection;
+use Endurance\ActivityFit\Mapper\FitRecordMessageMapper;
+use Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Raw\FitArchitecture;
+use Endurance\Fit\Raw\FitBaseType;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataMessage;
+use Endurance\Fit\Raw\RawFieldValue;
+use Endurance\Fit\Raw\RawStandardField;
+use Endurance\Fit\Raw\StandardFieldDefinition;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\Instant;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleAction;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Entity\Activity;
-use Youmad\Endurance\Activity\Exception\CannotRecordObservation;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordImportProjection;
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordMessageMapper;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Raw\FitArchitecture;
-use Youmad\Endurance\Fit\Raw\FitBaseType;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataMessage;
-use Youmad\Endurance\Fit\Raw\RawFieldValue;
-use Youmad\Endurance\Fit\Raw\RawStandardField;
-use Youmad\Endurance\Fit\Raw\StandardFieldDefinition;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
 
 final class FitTimerRecordOrderingTest extends TestCase
 {

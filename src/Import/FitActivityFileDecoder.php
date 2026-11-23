@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\ActivityFit\Mapper\FitFusedRecordMessageProcessor;
-use Youmad\Endurance\Fit\Decoder\FitDecodingSession;
-use Youmad\Endurance\Fit\Decoder\FitFileReader;
-use Youmad\Endurance\Fit\IO\FitInput;
-use Youmad\Endurance\Fit\Profile\FitProfileRegistry;
-use Youmad\Endurance\Fit\Profile\FitTypeRegistry;
-use Youmad\Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
+use Endurance\ActivityFit\Mapper\FitFusedRecordMessageProcessor;
+use Endurance\Fit\Decoder\FitDecodingSession;
+use Endurance\Fit\Decoder\FitFileReader;
+use Endurance\Fit\IO\FitInput;
+use Endurance\Fit\Profile\FitProfileRegistry;
+use Endurance\Fit\Profile\FitTypeRegistry;
+use Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
 
 /**
  * Production FIT file decoder specialized for Activity import.

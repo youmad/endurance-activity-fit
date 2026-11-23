@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\ActivitySummaryItem;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\Activity\Session\ActivitySession;
-use Youmad\Endurance\Activity\ValueObject\Lap;
-use Youmad\Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
-use Youmad\Endurance\ActivityFit\Value\FitMissingSummaryRecoveryResult;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\ActivitySummaryItem;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Session\ActivitySession;
+use Endurance\Activity\ValueObject\Lap;
+use Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
+use Endurance\ActivityFit\Value\FitMissingSummaryRecoveryResult;
+use Endurance\Foundation\ValueObject\Duration;
+use Endurance\Foundation\ValueObject\Instant;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 
 final readonly class FitMissingSummaryRecovery
 {

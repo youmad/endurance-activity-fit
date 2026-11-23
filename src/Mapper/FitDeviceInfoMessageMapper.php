@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\DeviceItem;
-use Youmad\Endurance\Activity\Application\Import\DeviceStatusItem;
-use Youmad\Endurance\Activity\Device\DeviceStatusObservation;
-use Youmad\Endurance\Activity\Telemetry\MeasurementType;
-use Youmad\Endurance\Activity\Telemetry\MeasurementUnit;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\Activity\Telemetry\TextMeasurement;
-use Youmad\Endurance\ActivityFit\Conversion\FitDateTimeConverter;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Value\SelectedFitFieldValue;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\DeviceItem;
+use Endurance\Activity\Application\Import\DeviceStatusItem;
+use Endurance\Activity\Device\DeviceStatusObservation;
+use Endurance\Activity\Telemetry\MeasurementType;
+use Endurance\Activity\Telemetry\MeasurementUnit;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\Activity\Telemetry\TextMeasurement;
+use Endurance\ActivityFit\Conversion\FitDateTimeConverter;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Value\SelectedFitFieldValue;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 final class FitDeviceInfoMessageMapper implements ResettableFitMessageMapper
 {

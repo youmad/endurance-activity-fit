@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Developer;
+namespace Endurance\ActivityFit\Developer;
 
-use Youmad\Endurance\Activity\Telemetry\MeasurementType;
-use Youmad\Endurance\Fit\Unified\UnifiedDeveloperComponent;
-use Youmad\Endurance\Fit\Unified\UnifiedDeveloperField;
+use Endurance\Activity\Telemetry\MeasurementType;
+use Endurance\Fit\Unified\UnifiedDeveloperComponent;
+use Endurance\Fit\Unified\UnifiedDeveloperField;
 
 final readonly class FitDeveloperMeasurementTypeFactory
 {

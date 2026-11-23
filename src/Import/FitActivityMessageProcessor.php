@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\ActivityFit\Mapper\FitFusedRecordMessageProcessor;
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordImportProjection;
-use Youmad\Endurance\Fit\Decoder\FitDataMessageProcessor;
-use Youmad\Endurance\Fit\Raw\RawDataRecord;
-use Youmad\Endurance\Fit\Raw\RawFitMessage;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\ActivityFit\Mapper\FitFusedRecordMessageProcessor;
+use Endurance\ActivityFit\Mapper\FitRecordImportProjection;
+use Endurance\Fit\Decoder\FitDataMessageProcessor;
+use Endurance\Fit\Raw\RawDataRecord;
+use Endurance\Fit\Raw\RawFitMessage;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 /**
  * File-scoped FIT-to-Activity message processor.

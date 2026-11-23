@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityDetailItem;
+use Endurance\Activity\Detail\Pool\PoolLength;
+use Endurance\Activity\Detail\Pool\PoolLengthType;
+use Endurance\Activity\Telemetry\MeasurementOrigin;
+use Endurance\Activity\Telemetry\MeasurementReading;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\ActivityFit\Mapper\FitPoolLengthMessageMapper;
+use Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Raw\FitArchitecture;
+use Endurance\Fit\Raw\FitBaseType;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataMessage;
+use Endurance\Fit\Raw\RawFieldValue;
+use Endurance\Fit\Raw\RawStandardField;
+use Endurance\Fit\Raw\StandardFieldDefinition;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityDetailItem;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLength;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLengthType;
-use Youmad\Endurance\Activity\Telemetry\MeasurementOrigin;
-use Youmad\Endurance\Activity\Telemetry\MeasurementReading;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\ActivityFit\Mapper\FitPoolLengthMessageMapper;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Raw\FitArchitecture;
-use Youmad\Endurance\Fit\Raw\FitBaseType;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataMessage;
-use Youmad\Endurance\Fit\Raw\RawFieldValue;
-use Youmad\Endurance\Fit\Raw\RawStandardField;
-use Youmad\Endurance\Fit\Raw\StandardFieldDefinition;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
 
 final class FitPoolLengthMessageMapperTest extends TestCase
 {

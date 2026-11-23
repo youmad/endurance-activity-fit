@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordImportProjection;
-use Youmad\Endurance\Fit\Decoder\RawFitFileStream;
-use Youmad\Endurance\Fit\Raw\FitFileHeader;
-use Youmad\Endurance\Fit\Raw\FitFileTrailer;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\ActivityFit\Mapper\FitRecordImportProjection;
+use Endurance\Fit\Decoder\RawFitFileStream;
+use Endurance\Fit\Raw\FitFileHeader;
+use Endurance\Fit\Raw\FitFileTrailer;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 final class FitActivityFileStream
 {

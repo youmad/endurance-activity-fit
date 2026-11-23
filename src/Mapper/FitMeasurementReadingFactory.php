@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Telemetry\Measurement;
-use Youmad\Endurance\Activity\Telemetry\MeasurementReading;
-use Youmad\Endurance\Activity\Telemetry\MeasurementSource;
-use Youmad\Endurance\Fit\Unified\FieldValueOrigin;
+use Endurance\Activity\Telemetry\Measurement;
+use Endurance\Activity\Telemetry\MeasurementReading;
+use Endurance\Activity\Telemetry\MeasurementSource;
+use Endurance\Fit\Unified\FieldValueOrigin;
 
 final readonly class FitMeasurementReadingFactory
 {

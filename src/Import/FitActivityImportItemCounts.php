@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
 final readonly class FitActivityImportItemCounts
 {

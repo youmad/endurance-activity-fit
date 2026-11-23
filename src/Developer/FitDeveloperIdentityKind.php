@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Developer;
+namespace Endurance\ActivityFit\Developer;
 
 enum FitDeveloperIdentityKind: string
 {

@@ -2,43 +2,43 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityDetailItem;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\ActivityLifecycleAction;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\Activity\Application\Import\ActivitySummaryItem;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Detail\ActivityInterval;
+use Endurance\Activity\Detail\Pool\PoolLength;
+use Endurance\Activity\Detail\Pool\PoolLengthType;
+use Endurance\Activity\Session\ActivitySession;
+use Endurance\Activity\Summary\ActivitySummary;
+use Endurance\Activity\Telemetry\ActivityObservation;
+use Endurance\Activity\Telemetry\PositionMeasurement;
+use Endurance\Activity\ValueObject\Lap;
+use Endurance\ActivityFit\Import\FitActivityImportWarningCollector;
+use Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
+use Endurance\ActivityFit\Mapper\FitActivityImportWarningDetector;
+use Endurance\ActivityFit\Mapper\FitMessageMapper;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Profile\InMemoryFitProfileRegistry;
+use Endurance\Fit\Profile\InMemoryFitTypeRegistry;
+use Endurance\Fit\Profile\MessageProfile;
+use Endurance\Fit\Raw\FitArchitecture;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataMessage;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\Coordinate;
+use Endurance\Foundation\ValueObject\Duration;
+use Endurance\Foundation\ValueObject\Instant;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityDetailItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleAction;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\Activity\Application\Import\ActivitySummaryItem;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\Activity\Detail\ActivityInterval;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLength;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLengthType;
-use Youmad\Endurance\Activity\Session\ActivitySession;
-use Youmad\Endurance\Activity\Summary\ActivitySummary;
-use Youmad\Endurance\Activity\Telemetry\ActivityObservation;
-use Youmad\Endurance\Activity\Telemetry\PositionMeasurement;
-use Youmad\Endurance\Activity\ValueObject\Lap;
-use Youmad\Endurance\ActivityFit\Import\FitActivityImportWarningCollector;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportWarningDetector;
-use Youmad\Endurance\ActivityFit\Mapper\FitMessageMapper;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Profile\InMemoryFitProfileRegistry;
-use Youmad\Endurance\Fit\Profile\InMemoryFitTypeRegistry;
-use Youmad\Endurance\Fit\Profile\MessageProfile;
-use Youmad\Endurance\Fit\Raw\FitArchitecture;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataMessage;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\Coordinate;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
 
 final class FitActivityImportItemMapperWarningTest extends TestCase
 {

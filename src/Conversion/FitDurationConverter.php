@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Conversion;
+namespace Endurance\ActivityFit\Conversion;
 
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Value\SelectedFitFieldValue;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Value\SelectedFitFieldValue;
+use Endurance\Foundation\ValueObject\Duration;
 
 final readonly class FitDurationConverter
 {

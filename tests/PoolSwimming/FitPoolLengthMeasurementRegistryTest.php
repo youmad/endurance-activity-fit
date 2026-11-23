@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\PoolSwimming;
+namespace Endurance\ActivityFit\Tests\PoolSwimming;
 
+use Endurance\ActivityFit\PoolSwimming\FitPoolLengthMeasurementRegistry;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\ActivityFit\PoolSwimming\FitPoolLengthMeasurementRegistry;
 
 final class FitPoolLengthMeasurementRegistryTest extends TestCase
 {

@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\ActivityLifecycleAction;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
+use Endurance\ActivityFit\Mapper\FitTimerEventMessageMapper;
+use Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Raw\FitArchitecture;
+use Endurance\Fit\Raw\FitBaseType;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataMessage;
+use Endurance\Fit\Raw\RawFieldValue;
+use Endurance\Fit\Raw\RawStandardField;
+use Endurance\Fit\Raw\StandardFieldDefinition;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleAction;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
-use Youmad\Endurance\ActivityFit\Mapper\FitTimerEventMessageMapper;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Raw\FitArchitecture;
-use Youmad\Endurance\Fit\Raw\FitBaseType;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataMessage;
-use Youmad\Endurance\Fit\Raw\RawFieldValue;
-use Youmad\Endurance\Fit\Raw\RawStandardField;
-use Youmad\Endurance\Fit\Raw\StandardFieldDefinition;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
 
 final class FitTimerEventMessageMapperTest extends TestCase
 {

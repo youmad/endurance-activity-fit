@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Session;
+namespace Endurance\ActivityFit\Session;
 
-use Youmad\Endurance\Activity\Telemetry\MeasurementType;
-use Youmad\Endurance\Activity\Telemetry\MeasurementUnit;
+use Endurance\Activity\Telemetry\MeasurementType;
+use Endurance\Activity\Telemetry\MeasurementUnit;
 
 final readonly class FitSessionScalarMeasurementDefinition
 {

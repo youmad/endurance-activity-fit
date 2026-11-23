@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Session\ActivitySession;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Mapper\FitActivitySummaryRecovery;
+use Endurance\ActivityFit\Value\FitActivitySummarySource;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Profile\InMemoryFitProfileRegistry;
+use Endurance\Fit\Profile\InMemoryFitTypeRegistry;
+use Endurance\Fit\Profile\MessageProfile;
+use Endurance\Fit\Raw\FitArchitecture;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataMessage;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\Duration;
+use Endurance\Foundation\ValueObject\Instant;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\Activity\Session\ActivitySession;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivitySummaryRecovery;
-use Youmad\Endurance\ActivityFit\Value\FitActivitySummarySource;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Profile\InMemoryFitProfileRegistry;
-use Youmad\Endurance\Fit\Profile\InMemoryFitTypeRegistry;
-use Youmad\Endurance\Fit\Profile\MessageProfile;
-use Youmad\Endurance\Fit\Raw\FitArchitecture;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataMessage;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
 
 final class FitActivitySummaryRecoveryTest extends TestCase
 {

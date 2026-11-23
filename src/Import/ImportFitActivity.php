@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\UseCase\ImportActivityStream;
-use Youmad\Endurance\Activity\ValueObject\ActivityId;
-use Youmad\Endurance\Activity\ValueObject\ActivityImportIdempotencyKey;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Decoder\UnifiedFitFileStream;
-use Youmad\Endurance\Fit\IO\FitInput;
-use Youmad\Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\UseCase\ImportActivityStream;
+use Endurance\Activity\ValueObject\ActivityId;
+use Endurance\Activity\ValueObject\ActivityImportIdempotencyKey;
+use Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Decoder\UnifiedFitFileStream;
+use Endurance\Fit\IO\FitInput;
+use Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
+use Endurance\Foundation\ValueObject\Instant;
 
 final readonly class ImportFitActivity
 {
@@ -221,7 +221,7 @@ final readonly class ImportFitActivity
      * @param \Closure(UnifiedFitFileStream|FitActivityFileStream): void $onOpened
      * @param \Closure(): void|null                                      $onProgress
      *
-     * @return \Generator<int, \Youmad\Endurance\Activity\Application\Import\ActivityImportItem>
+     * @return \Generator<int, \Endurance\Activity\Application\Import\ActivityImportItem>
      */
     private function items(
         FitInput $input,
@@ -250,10 +250,10 @@ final readonly class ImportFitActivity
     }
 
     /**
-     * @param iterable<\Youmad\Endurance\Activity\Application\Import\ActivityImportItem> $items
-     * @param \Closure(): void|null                                                      $onProgress
+     * @param iterable<\Endurance\Activity\Application\Import\ActivityImportItem> $items
+     * @param \Closure(): void|null                                               $onProgress
      *
-     * @return \Generator<int, \Youmad\Endurance\Activity\Application\Import\ActivityImportItem>
+     * @return \Generator<int, \Endurance\Activity\Application\Import\ActivityImportItem>
      */
     private function withProgressPulse(
         iterable $items,
@@ -284,7 +284,7 @@ final readonly class ImportFitActivity
         FitInput $input,
         FitActivityImportProgress $progress,
         UnifiedFitFileStream|FitActivityFileStream|null $file,
-        \Youmad\Endurance\Activity\Application\Import\ActivityImportResult $activityImport,
+        \Endurance\Activity\Application\Import\ActivityImportResult $activityImport,
         array $warnings,
     ): FitActivityImportResult {
         if (null === $file) {

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\ActivitySummaryItem;
+use Endurance\Activity\Summary\ActivitySummary;
+use Endurance\ActivityFit\Mapper\FitMissingSummaryRecovery;
+use Endurance\Foundation\ValueObject\Duration;
+use Endurance\Foundation\ValueObject\Instant;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\ActivitySummaryItem;
-use Youmad\Endurance\Activity\Summary\ActivitySummary;
-use Youmad\Endurance\ActivityFit\Mapper\FitMissingSummaryRecovery;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
 
 final class FitMissingSummaryRecoveryWarningTest extends TestCase
 {

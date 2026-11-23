@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityDetailItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\ActivitySummaryItem;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLength;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLengthType;
-use Youmad\Endurance\Activity\Detail\SequentialActivityDetail;
-use Youmad\Endurance\ActivityFit\Conversion\FitDurationConverter;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
+use Endurance\Activity\Application\Import\ActivityDetailItem;
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\ActivitySummaryItem;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Detail\Pool\PoolLength;
+use Endurance\Activity\Detail\Pool\PoolLengthType;
+use Endurance\Activity\Detail\SequentialActivityDetail;
+use Endurance\ActivityFit\Conversion\FitDurationConverter;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\Duration;
+use Endurance\Foundation\ValueObject\Instant;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 
 final readonly class FitActivityImportWarningDetector
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Value;
+namespace Endurance\ActivityFit\Value;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\SessionItem;
 
 final readonly class FitMissingSummaryRecoveryResult
 {

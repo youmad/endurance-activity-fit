@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Import;
+namespace Endurance\ActivityFit\Tests\Import;
 
+use Endurance\ActivityFit\Import\DetectFitActivityStart;
+use Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
+use Endurance\Fit\Checksum\FitCrc16;
+use Endurance\Fit\IO\ResourceFitInput;
+use Endurance\Foundation\ValueObject\Instant;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\ActivityFit\Import\DetectFitActivityStart;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
-use Youmad\Endurance\Fit\Checksum\FitCrc16;
-use Youmad\Endurance\Fit\IO\ResourceFitInput;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
 
 final class DetectFitActivityStartTest extends TestCase
 {

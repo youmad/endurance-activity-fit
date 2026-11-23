@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Import;
+namespace Endurance\ActivityFit\Tests\Import;
 
+use Endurance\ActivityFit\Import\FitActivityImportItemCounts;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\ActivityFit\Import\FitActivityImportItemCounts;
 
 final class FitActivityImportItemCountsTest extends TestCase
 {

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityDetailItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Detail\ActivityInterval;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLength;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLengthType;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\PoolSwimming\FitPoolLengthMeasurementRegistry;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
+use Endurance\Activity\Application\Import\ActivityDetailItem;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Detail\ActivityInterval;
+use Endurance\Activity\Detail\Pool\PoolLength;
+use Endurance\Activity\Detail\Pool\PoolLengthType;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\PoolSwimming\FitPoolLengthMeasurementRegistry;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 
 final readonly class FitPoolLengthMessageMapper implements FitMessageMapper
 {

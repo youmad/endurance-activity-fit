@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Developer;
+namespace Endurance\ActivityFit\Tests\Developer;
 
+use Endurance\Activity\Telemetry\ArrayMeasurement;
+use Endurance\Activity\Telemetry\MeasurementReading;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\Activity\Telemetry\TextMeasurement;
+use Endurance\ActivityFit\Developer\FitDeveloperIdentityKind;
+use Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
+use Endurance\ActivityFit\Developer\FitDeveloperMeasurementMetadata;
+use Endurance\ActivityFit\Tests\Fixture\FitDeveloperFieldFixture;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Telemetry\ArrayMeasurement;
-use Youmad\Endurance\Activity\Telemetry\MeasurementReading;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\Activity\Telemetry\TextMeasurement;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperIdentityKind;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperMeasurementMetadata;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\FitDeveloperFieldFixture;
 
 final class FitDeveloperMeasurementMapperTest extends TestCase
 {

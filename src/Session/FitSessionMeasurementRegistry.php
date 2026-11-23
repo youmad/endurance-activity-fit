@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Session;
+namespace Endurance\ActivityFit\Session;
 
 final readonly class FitSessionMeasurementRegistry
 {

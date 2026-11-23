@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\Activity\ValueObject\Lap;
-use Youmad\Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Lap\FitLapMeasurementRegistry;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\Activity\ValueObject\Lap;
+use Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
+use Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Lap\FitLapMeasurementRegistry;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 
 final readonly class FitLapMessageMapper implements FitMessageMapper
 {

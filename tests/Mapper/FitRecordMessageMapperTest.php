@@ -2,33 +2,33 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Telemetry\ActivityObservation;
+use Endurance\Activity\Telemetry\MeasurementOrigin;
+use Endurance\Activity\Telemetry\MeasurementReading;
+use Endurance\Activity\Telemetry\PositionMeasurement;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
+use Endurance\ActivityFit\Mapper\FitRecordMessageMapper;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Profile\ComponentProfile;
+use Endurance\Fit\Profile\FieldProfile;
+use Endurance\Fit\Profile\FieldTransform;
+use Endurance\Fit\Profile\InMemoryFitProfileRegistry;
+use Endurance\Fit\Profile\InMemoryFitTypeRegistry;
+use Endurance\Fit\Profile\MessageProfile;
+use Endurance\Fit\Raw\FitArchitecture;
+use Endurance\Fit\Raw\FitBaseType;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataMessage;
+use Endurance\Fit\Raw\RawFieldValue;
+use Endurance\Fit\Raw\RawStandardField;
+use Endurance\Fit\Raw\StandardFieldDefinition;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Telemetry\ActivityObservation;
-use Youmad\Endurance\Activity\Telemetry\MeasurementOrigin;
-use Youmad\Endurance\Activity\Telemetry\MeasurementReading;
-use Youmad\Endurance\Activity\Telemetry\PositionMeasurement;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordMessageMapper;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Profile\ComponentProfile;
-use Youmad\Endurance\Fit\Profile\FieldProfile;
-use Youmad\Endurance\Fit\Profile\FieldTransform;
-use Youmad\Endurance\Fit\Profile\InMemoryFitProfileRegistry;
-use Youmad\Endurance\Fit\Profile\InMemoryFitTypeRegistry;
-use Youmad\Endurance\Fit\Profile\MessageProfile;
-use Youmad\Endurance\Fit\Raw\FitArchitecture;
-use Youmad\Endurance\Fit\Raw\FitBaseType;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataMessage;
-use Youmad\Endurance\Fit\Raw\RawFieldValue;
-use Youmad\Endurance\Fit\Raw\RawStandardField;
-use Youmad\Endurance\Fit\Raw\StandardFieldDefinition;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
 
 final class FitRecordMessageMapperTest extends TestCase
 {

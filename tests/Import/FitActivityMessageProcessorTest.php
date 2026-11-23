@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Import;
+namespace Endurance\ActivityFit\Tests\Import;
 
+use Endurance\ActivityFit\Import\FitActivityMessageProcessor;
+use Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
+use Endurance\ActivityFit\Mapper\FitFusedRecordMessageProcessor;
+use Endurance\ActivityFit\Tests\Fixture\FitDeveloperFieldFixture;
+use Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Decoder\FitDecodingSession;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\ActivityFit\Import\FitActivityMessageProcessor;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
-use Youmad\Endurance\ActivityFit\Mapper\FitFusedRecordMessageProcessor;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\FitDeveloperFieldFixture;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Decoder\FitDecodingSession;
 
 final class FitActivityMessageProcessorTest extends TestCase
 {

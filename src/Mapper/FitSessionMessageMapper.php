@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\Activity\Session\ActivitySession;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
-use Youmad\Endurance\ActivityFit\Conversion\FitCoordinateConverter;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Session\FitSessionMeasurementRegistry;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\Coordinate;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Session\ActivitySession;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
+use Endurance\ActivityFit\Conversion\FitCoordinateConverter;
+use Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Session\FitSessionMeasurementRegistry;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\Coordinate;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 
 final readonly class FitSessionMessageMapper implements FitMessageMapper
 {

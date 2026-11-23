@@ -2,34 +2,34 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Telemetry\ActivityObservation;
-use Youmad\Endurance\Activity\Telemetry\MeasurementReading;
-use Youmad\Endurance\Activity\Telemetry\PositionMeasurement;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\ActivityFit\Conversion\FitCoordinateConverter;
-use Youmad\Endurance\ActivityFit\Conversion\FitDateTimeConverter;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Record\FitRecordMeasurementRegistry;
-use Youmad\Endurance\Fit\Component\ComponentResolvedDataMessage;
-use Youmad\Endurance\Fit\Component\ResolvedComponentField;
-use Youmad\Endurance\Fit\Decoded\DecodedFieldElements;
-use Youmad\Endurance\Fit\Decoded\ValidFieldElement;
-use Youmad\Endurance\Fit\Decoder\FitComponentExtractor;
-use Youmad\Endurance\Fit\Decoder\FitComponentValueResolver;
-use Youmad\Endurance\Fit\Decoder\FitDataMessageDecoder;
-use Youmad\Endurance\Fit\Decoder\FitDeveloperFieldResolver;
-use Youmad\Endurance\Fit\Decoder\FitProfileNormalizer;
-use Youmad\Endurance\Fit\Profiled\ProfiledDataMessage;
-use Youmad\Endurance\Fit\Profiled\ProfiledStandardField;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataRecord;
-use Youmad\Endurance\Fit\Unified\FieldValueOrigin;
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Telemetry\ActivityObservation;
+use Endurance\Activity\Telemetry\MeasurementReading;
+use Endurance\Activity\Telemetry\PositionMeasurement;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\ActivityFit\Conversion\FitCoordinateConverter;
+use Endurance\ActivityFit\Conversion\FitDateTimeConverter;
+use Endurance\ActivityFit\Developer\FitDeveloperMeasurementMapper;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Record\FitRecordMeasurementRegistry;
+use Endurance\Fit\Component\ComponentResolvedDataMessage;
+use Endurance\Fit\Component\ResolvedComponentField;
+use Endurance\Fit\Decoded\DecodedFieldElements;
+use Endurance\Fit\Decoded\ValidFieldElement;
+use Endurance\Fit\Decoder\FitComponentExtractor;
+use Endurance\Fit\Decoder\FitComponentValueResolver;
+use Endurance\Fit\Decoder\FitDataMessageDecoder;
+use Endurance\Fit\Decoder\FitDeveloperFieldResolver;
+use Endurance\Fit\Decoder\FitProfileNormalizer;
+use Endurance\Fit\Profiled\ProfiledDataMessage;
+use Endurance\Fit\Profiled\ProfiledStandardField;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataRecord;
+use Endurance\Fit\Unified\FieldValueOrigin;
 
 /**
  * Production Record hot path.
@@ -286,7 +286,7 @@ final class FitFusedRecordMessageProcessor
     }
 
     /**
-     * @param list<\Youmad\Endurance\Fit\Unified\UnifiedDeveloperField> $developerFields
+     * @param list<\Endurance\Fit\Unified\UnifiedDeveloperField> $developerFields
      */
     private function mapWithPlan(
         ProfiledDataMessage $message,

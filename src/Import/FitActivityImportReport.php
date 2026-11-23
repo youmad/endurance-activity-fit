@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\ValueObject\ActivityId;
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\ValueObject\ActivityId;
 
 final readonly class FitActivityImportReport
 {

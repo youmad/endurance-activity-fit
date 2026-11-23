@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\ActivitySummaryItem;
-use Youmad\Endurance\Activity\Summary\ActivitySummary;
-use Youmad\Endurance\ActivityFit\Conversion\FitDateTimeConverter;
-use Youmad\Endurance\ActivityFit\Conversion\FitDurationConverter;
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Value\FitActivitySummarySource;
-use Youmad\Endurance\ActivityFit\Value\SelectedFitFieldValue;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\ActivitySummaryItem;
+use Endurance\Activity\Summary\ActivitySummary;
+use Endurance\ActivityFit\Conversion\FitDateTimeConverter;
+use Endurance\ActivityFit\Conversion\FitDurationConverter;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Value\FitActivitySummarySource;
+use Endurance\ActivityFit\Value\SelectedFitFieldValue;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 
 final readonly class FitActivityMessageMapper implements FitMessageMapper
 {

@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityDetailItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleAction;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\Activity\Application\Import\DeviceStatusItem;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\ActivityFit\Exception\FitActivityStartNotFound;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
+use Endurance\Activity\Application\Import\ActivityDetailItem;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\ActivityLifecycleAction;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\Activity\Application\Import\DeviceStatusItem;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\ActivityFit\Exception\FitActivityStartNotFound;
+use Endurance\Foundation\ValueObject\Instant;
 
 final class FitActivityStartResolver
 {

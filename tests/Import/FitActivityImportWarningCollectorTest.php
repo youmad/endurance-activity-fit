@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Import;
+namespace Endurance\ActivityFit\Tests\Import;
 
+use Endurance\Activity\Application\Import\ActivityImportWarning;
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\ActivityFit\Import\FitActivityImportWarningCollector;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarning;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\ActivityFit\Import\FitActivityImportWarningCollector;
 
 final class FitActivityImportWarningCollectorTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Developer;
+namespace Endurance\ActivityFit\Developer;
 
-use Youmad\Endurance\Activity\Telemetry\MeasurementMetadata;
+use Endurance\Activity\Telemetry\MeasurementMetadata;
 
 final readonly class FitDeveloperMeasurementMetadata implements MeasurementMetadata
 {

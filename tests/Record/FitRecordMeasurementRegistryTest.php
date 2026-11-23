@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Record;
+namespace Endurance\ActivityFit\Tests\Record;
 
+use Endurance\ActivityFit\Record\FitRecordMeasurementRegistry;
+use Endurance\ActivityFit\Record\FitRecordScalarMeasurementDefinition;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\ActivityFit\Record\FitRecordMeasurementRegistry;
-use Youmad\Endurance\ActivityFit\Record\FitRecordScalarMeasurementDefinition;
 
 final class FitRecordMeasurementRegistryTest extends TestCase
 {

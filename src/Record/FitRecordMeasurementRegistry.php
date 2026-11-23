@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Record;
+namespace Endurance\ActivityFit\Record;
 
 final readonly class FitRecordMeasurementRegistry
 {

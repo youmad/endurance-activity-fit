@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Import;
+namespace Endurance\ActivityFit\Tests\Import;
 
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\ActivityFit\Import\FitActivityFileDecoder;
+use Endurance\ActivityFit\Mapper\FitRecordImportProjection;
+use Endurance\ActivityFit\Mapper\FitRecordMessageMapper;
+use Endurance\Fit\Checksum\FitCrc16;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\IO\ResourceFitInput;
+use Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
+use Endurance\Fit\Typed\TypedEnumFieldElement;
+use Endurance\Fit\Typed\TypedFieldElements;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\ActivityFit\Import\FitActivityFileDecoder;
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordImportProjection;
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordMessageMapper;
-use Youmad\Endurance\Fit\Checksum\FitCrc16;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\IO\ResourceFitInput;
-use Youmad\Endurance\Fit\Profile\Generated\GeneratedFitProfileSet;
-use Youmad\Endurance\Fit\Typed\TypedEnumFieldElement;
-use Youmad\Endurance\Fit\Typed\TypedFieldElements;
 
 final class FitActivityFileDecoderProfileTest extends TestCase
 {

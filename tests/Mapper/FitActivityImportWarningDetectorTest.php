@@ -2,35 +2,35 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivityDetailItem;
+use Endurance\Activity\Application\Import\ActivityImportWarningCode;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Detail\ActivityInterval;
+use Endurance\Activity\Detail\Pool\PoolLength;
+use Endurance\Activity\Detail\Pool\PoolLengthType;
+use Endurance\Activity\Session\ActivitySession;
+use Endurance\Activity\ValueObject\Lap;
+use Endurance\ActivityFit\Mapper\FitActivityImportWarningDetector;
+use Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\Profile\FieldProfile;
+use Endurance\Fit\Profile\Generated\GeneratedFitTypeRegistry;
+use Endurance\Fit\Profile\InMemoryFitProfileRegistry;
+use Endurance\Fit\Profile\MessageProfile;
+use Endurance\Fit\Raw\FitArchitecture;
+use Endurance\Fit\Raw\FitBaseType;
+use Endurance\Fit\Raw\MessageDefinition;
+use Endurance\Fit\Raw\RawDataMessage;
+use Endurance\Fit\Raw\RawFieldValue;
+use Endurance\Fit\Raw\RawStandardField;
+use Endurance\Fit\Raw\StandardFieldDefinition;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Foundation\ValueObject\Duration;
+use Endurance\Foundation\ValueObject\Instant;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityDetailItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportWarningCode;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\Activity\Detail\ActivityInterval;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLength;
-use Youmad\Endurance\Activity\Detail\Pool\PoolLengthType;
-use Youmad\Endurance\Activity\Session\ActivitySession;
-use Youmad\Endurance\Activity\ValueObject\Lap;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportWarningDetector;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\Profile\FieldProfile;
-use Youmad\Endurance\Fit\Profile\Generated\GeneratedFitTypeRegistry;
-use Youmad\Endurance\Fit\Profile\InMemoryFitProfileRegistry;
-use Youmad\Endurance\Fit\Profile\MessageProfile;
-use Youmad\Endurance\Fit\Raw\FitArchitecture;
-use Youmad\Endurance\Fit\Raw\FitBaseType;
-use Youmad\Endurance\Fit\Raw\MessageDefinition;
-use Youmad\Endurance\Fit\Raw\RawDataMessage;
-use Youmad\Endurance\Fit\Raw\RawFieldValue;
-use Youmad\Endurance\Fit\Raw\RawStandardField;
-use Youmad\Endurance\Fit\Raw\StandardFieldDefinition;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
 
 final class FitActivityImportWarningDetectorTest extends TestCase
 {

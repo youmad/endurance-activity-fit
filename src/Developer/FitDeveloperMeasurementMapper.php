@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Developer;
+namespace Endurance\ActivityFit\Developer;
 
-use Youmad\Endurance\Activity\Telemetry\ArrayMeasurement;
-use Youmad\Endurance\Activity\Telemetry\Measurement;
-use Youmad\Endurance\Activity\Telemetry\MeasurementReading;
-use Youmad\Endurance\Activity\Telemetry\MeasurementSource;
-use Youmad\Endurance\Activity\Telemetry\MeasurementType;
-use Youmad\Endurance\Activity\Telemetry\MeasurementUnit;
-use Youmad\Endurance\Activity\Telemetry\ScalarMeasurement;
-use Youmad\Endurance\Activity\Telemetry\TextMeasurement;
-use Youmad\Endurance\Fit\Developer\DeveloperComponentProfile;
-use Youmad\Endurance\Fit\Developer\DeveloperDataProfile;
-use Youmad\Endurance\Fit\Developer\DeveloperFieldProfile;
-use Youmad\Endurance\Fit\Typed\TypedEnumFieldElement;
-use Youmad\Endurance\Fit\Typed\TypedFieldElements;
-use Youmad\Endurance\Fit\Typed\TypedFieldValue;
-use Youmad\Endurance\Fit\Typed\TypedInvalidFieldElement;
-use Youmad\Endurance\Fit\Typed\TypedScalarFieldElement;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Fit\Unified\UnifiedDeveloperComponent;
-use Youmad\Endurance\Fit\Unified\UnifiedDeveloperField;
+use Endurance\Activity\Telemetry\ArrayMeasurement;
+use Endurance\Activity\Telemetry\Measurement;
+use Endurance\Activity\Telemetry\MeasurementReading;
+use Endurance\Activity\Telemetry\MeasurementSource;
+use Endurance\Activity\Telemetry\MeasurementType;
+use Endurance\Activity\Telemetry\MeasurementUnit;
+use Endurance\Activity\Telemetry\ScalarMeasurement;
+use Endurance\Activity\Telemetry\TextMeasurement;
+use Endurance\Fit\Developer\DeveloperComponentProfile;
+use Endurance\Fit\Developer\DeveloperDataProfile;
+use Endurance\Fit\Developer\DeveloperFieldProfile;
+use Endurance\Fit\Typed\TypedEnumFieldElement;
+use Endurance\Fit\Typed\TypedFieldElements;
+use Endurance\Fit\Typed\TypedFieldValue;
+use Endurance\Fit\Typed\TypedInvalidFieldElement;
+use Endurance\Fit\Typed\TypedScalarFieldElement;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Fit\Unified\UnifiedDeveloperComponent;
+use Endurance\Fit\Unified\UnifiedDeveloperField;
 
 final readonly class FitDeveloperMeasurementMapper
 {

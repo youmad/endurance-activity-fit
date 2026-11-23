@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Mapper;
+namespace Endurance\ActivityFit\Tests\Mapper;
 
+use Endurance\Activity\Application\Import\ActivitySummaryItem;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\Activity\Session\ActivitySession;
+use Endurance\Activity\Summary\ActivitySummary;
+use Endurance\Activity\ValueObject\Lap;
+use Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
+use Endurance\ActivityFit\Mapper\FitMissingSummaryRecovery;
+use Endurance\Foundation\ValueObject\Duration;
+use Endurance\Foundation\ValueObject\Instant;
+use Endurance\Foundation\ValueObject\TemporalResolution;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivitySummaryItem;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\Activity\Session\ActivitySession;
-use Youmad\Endurance\Activity\Summary\ActivitySummary;
-use Youmad\Endurance\Activity\ValueObject\Lap;
-use Youmad\Endurance\Activity\ValueObject\SummaryAdjacencyPolicy;
-use Youmad\Endurance\ActivityFit\Mapper\FitMissingSummaryRecovery;
-use Youmad\Endurance\Foundation\ValueObject\Duration;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
-use Youmad\Endurance\Foundation\ValueObject\TemporalResolution;
 
 final class FitMissingSummaryRecoveryTest extends TestCase
 {

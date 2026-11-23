@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportResult;
+use Endurance\Activity\Application\Import\ActivityImportResult;
 
 final readonly class FitActivityImportResult
 {

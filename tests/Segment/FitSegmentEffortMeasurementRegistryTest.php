@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Segment;
+namespace Endurance\ActivityFit\Tests\Segment;
 
+use Endurance\ActivityFit\Segment\FitSegmentEffortMeasurementRegistry;
+use Endurance\ActivityFit\Segment\FitSegmentEffortScalarMeasurementDefinition;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\ActivityFit\Segment\FitSegmentEffortMeasurementRegistry;
-use Youmad\Endurance\ActivityFit\Segment\FitSegmentEffortScalarMeasurementDefinition;
 
 final class FitSegmentEffortMeasurementRegistryTest extends TestCase
 {

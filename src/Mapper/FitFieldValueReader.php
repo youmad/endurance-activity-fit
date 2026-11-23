@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\ActivityFit\Value\SelectedFitFieldValue;
-use Youmad\Endurance\Fit\Decoded\DecodedFieldElements;
-use Youmad\Endurance\Fit\Decoded\ValidFieldElement;
-use Youmad\Endurance\Fit\Unified\ComponentFieldValue;
-use Youmad\Endurance\Fit\Unified\FieldValueSelectionPolicy;
-use Youmad\Endurance\Fit\Unified\PhysicalFieldValue;
-use Youmad\Endurance\Fit\Unified\PreferPhysicalFieldValueSelectionPolicy;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
-use Youmad\Endurance\Fit\Unified\UnifiedFieldValue;
-use Youmad\Endurance\Fit\Unified\UnifiedStandardField;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\ActivityFit\Value\SelectedFitFieldValue;
+use Endurance\Fit\Decoded\DecodedFieldElements;
+use Endurance\Fit\Decoded\ValidFieldElement;
+use Endurance\Fit\Unified\ComponentFieldValue;
+use Endurance\Fit\Unified\FieldValueSelectionPolicy;
+use Endurance\Fit\Unified\PhysicalFieldValue;
+use Endurance\Fit\Unified\PreferPhysicalFieldValueSelectionPolicy;
+use Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Fit\Unified\UnifiedFieldValue;
+use Endurance\Fit\Unified\UnifiedStandardField;
 
 final class FitFieldValueReader
 {

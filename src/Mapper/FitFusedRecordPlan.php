@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Fit\Component\ResolvedComponentField;
-use Youmad\Endurance\Fit\Profiled\ProfiledStandardField;
+use Endurance\Fit\Component\ResolvedComponentField;
+use Endurance\Fit\Profiled\ProfiledStandardField;
 
 /** @internal */
 final readonly class FitFusedRecordPlan

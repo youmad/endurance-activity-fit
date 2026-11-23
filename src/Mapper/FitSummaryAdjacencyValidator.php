@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\ActivityFit\Exception\InvalidFitActivityMessage;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 /**
  * Mirrors Garmin ActivityFileValidationPlugin's REQUIRED

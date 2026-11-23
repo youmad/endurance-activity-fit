@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 interface FitMessageMapper
 {

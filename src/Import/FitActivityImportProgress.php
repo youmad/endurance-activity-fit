@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\Activity\Application\Import\ActivityDetailItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\Activity\Application\Import\ActivitySummaryItem;
-use Youmad\Endurance\Activity\Application\Import\DeviceItem;
-use Youmad\Endurance\Activity\Application\Import\DeviceStatusItem;
-use Youmad\Endurance\Activity\Application\Import\LapItem;
-use Youmad\Endurance\Activity\Application\Import\ObservationItem;
-use Youmad\Endurance\Activity\Application\Import\SessionItem;
-use Youmad\Endurance\ActivityFit\Mapper\FitRecordImportProjection;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Activity\Application\Import\ActivityDetailItem;
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\Activity\Application\Import\ActivitySummaryItem;
+use Endurance\Activity\Application\Import\DeviceItem;
+use Endurance\Activity\Application\Import\DeviceStatusItem;
+use Endurance\Activity\Application\Import\LapItem;
+use Endurance\Activity\Application\Import\ObservationItem;
+use Endurance\Activity\Application\Import\SessionItem;
+use Endurance\ActivityFit\Mapper\FitRecordImportProjection;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 final class FitActivityImportProgress
 {

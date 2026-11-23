@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Device\DeviceDescriptor;
-use Youmad\Endurance\ActivityFit\Value\SelectedFitFieldValue;
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Activity\Device\DeviceDescriptor;
+use Endurance\ActivityFit\Value\SelectedFitFieldValue;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 final readonly class FitDeviceDescriptorFactory
 {

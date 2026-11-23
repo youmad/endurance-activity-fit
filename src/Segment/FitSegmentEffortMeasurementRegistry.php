@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Segment;
+namespace Endurance\ActivityFit\Segment;
 
 final readonly class FitSegmentEffortMeasurementRegistry
 {

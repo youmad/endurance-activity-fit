@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\PoolSwimming;
+namespace Endurance\ActivityFit\PoolSwimming;
 
 final readonly class FitPoolLengthMeasurementRegistry
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Import;
+namespace Endurance\ActivityFit\Import;
 
-use Youmad\Endurance\Activity\ValueObject\ActivityId;
+use Endurance\Activity\ValueObject\ActivityId;
 
 final class FitActivityImportFailed extends \RuntimeException
 {

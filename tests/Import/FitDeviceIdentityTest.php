@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Import;
+namespace Endurance\ActivityFit\Tests\Import;
 
+use Endurance\Activity\Application\Import\ActivityImportItem;
+use Endurance\Activity\Application\Import\DeviceItem;
+use Endurance\Activity\Application\Import\DeviceStatusItem;
+use Endurance\ActivityFit\Import\FitActivityFileDecoder;
+use Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
+use Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
+use Endurance\Fit\Checksum\FitCrc16;
+use Endurance\Fit\Decoder\FitDecoder;
+use Endurance\Fit\IO\ResourceFitInput;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityImportItem;
-use Youmad\Endurance\Activity\Application\Import\DeviceItem;
-use Youmad\Endurance\Activity\Application\Import\DeviceStatusItem;
-use Youmad\Endurance\ActivityFit\Import\FitActivityFileDecoder;
-use Youmad\Endurance\ActivityFit\Mapper\FitActivityImportItemMapper;
-use Youmad\Endurance\ActivityFit\Tests\Fixture\TestFitProfile;
-use Youmad\Endurance\Fit\Checksum\FitCrc16;
-use Youmad\Endurance\Fit\Decoder\FitDecoder;
-use Youmad\Endurance\Fit\IO\ResourceFitInput;
 
 final class FitDeviceIdentityTest extends TestCase
 {

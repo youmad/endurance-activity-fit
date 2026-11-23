@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Value;
+namespace Endurance\ActivityFit\Value;
 
 enum FitTimerState: string
 {

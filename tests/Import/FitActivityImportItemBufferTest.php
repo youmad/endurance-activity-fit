@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Import;
+namespace Endurance\ActivityFit\Tests\Import;
 
+use Endurance\Activity\Application\Import\ActivityLifecycleAction;
+use Endurance\Activity\Application\Import\ActivityLifecycleItem;
+use Endurance\ActivityFit\Import\FitActivityImportItemBuffer;
+use Endurance\Foundation\ValueObject\Instant;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleAction;
-use Youmad\Endurance\Activity\Application\Import\ActivityLifecycleItem;
-use Youmad\Endurance\ActivityFit\Import\FitActivityImportItemBuffer;
-use Youmad\Endurance\Foundation\ValueObject\Instant;
 
 final class FitActivityImportItemBufferTest extends TestCase
 {

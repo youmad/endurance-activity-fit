@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Mapper;
+namespace Endurance\ActivityFit\Mapper;
 
-use Youmad\Endurance\Activity\Device\ActivityDevice;
-use Youmad\Endurance\Activity\Device\DeviceDescriptor;
-use Youmad\Endurance\Activity\ValueObject\ActivityDeviceId;
+use Endurance\Activity\Device\ActivityDevice;
+use Endurance\Activity\Device\DeviceDescriptor;
+use Endurance\Activity\ValueObject\ActivityDeviceId;
 
 final class FitDeviceIndexRegistry
 {

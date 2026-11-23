@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Exception;
+namespace Endurance\ActivityFit\Exception;
 
 final class FitActivityStartNotFound extends \RuntimeException
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Exception;
+namespace Endurance\ActivityFit\Exception;
 
-use Youmad\Endurance\Fit\Unified\UnifiedDataMessage;
+use Endurance\Fit\Unified\UnifiedDataMessage;
 
 final class InvalidFitActivityMessage extends \RuntimeException
 {

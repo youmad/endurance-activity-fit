@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Tests\Developer;
+namespace Endurance\ActivityFit\Tests\Developer;
 
+use Endurance\ActivityFit\Developer\FitDeveloperApplicationIdentity;
+use Endurance\ActivityFit\Developer\FitDeveloperIdentityKind;
+use Endurance\Fit\Developer\DeveloperDataProfile;
 use PHPUnit\Framework\TestCase;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperApplicationIdentity;
-use Youmad\Endurance\ActivityFit\Developer\FitDeveloperIdentityKind;
-use Youmad\Endurance\Fit\Developer\DeveloperDataProfile;
 
 final class FitDeveloperApplicationIdentityTest extends TestCase
 {

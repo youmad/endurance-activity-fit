@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Developer;
+namespace Endurance\ActivityFit\Developer;
 
-use Youmad\Endurance\Fit\Developer\DeveloperDataProfile;
+use Endurance\Fit\Developer\DeveloperDataProfile;
 
 final readonly class FitDeveloperApplicationIdentity
 {

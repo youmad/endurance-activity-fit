@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Youmad\Endurance\ActivityFit\Value;
+namespace Endurance\ActivityFit\Value;
 
-use Youmad\Endurance\Fit\Typed\TypedEnumFieldElement;
-use Youmad\Endurance\Fit\Typed\TypedFieldElements;
-use Youmad\Endurance\Fit\Unified\ComponentFieldValue;
-use Youmad\Endurance\Fit\Unified\FieldValueOrigin;
-use Youmad\Endurance\Fit\Unified\PhysicalFieldValue;
-use Youmad\Endurance\Fit\Unified\UnifiedFieldValue;
+use Endurance\Fit\Typed\TypedEnumFieldElement;
+use Endurance\Fit\Typed\TypedFieldElements;
+use Endurance\Fit\Unified\ComponentFieldValue;
+use Endurance\Fit\Unified\FieldValueOrigin;
+use Endurance\Fit\Unified\PhysicalFieldValue;
+use Endurance\Fit\Unified\UnifiedFieldValue;
 
 final readonly class SelectedFitFieldValue
 {
